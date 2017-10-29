@@ -20,4 +20,9 @@
     <string name="error_incorrect_secret_code">Incorrect secret code</string>
 
     <string name="show_more_basket">Show more</string>
+
+    <string name="youtube_prod_dev">Product development</string>
+    <string name="error_player">There was an error initializing the YoutubePlayer (%1$s)</string>
+    <string name="cartAdd">Add to cart</string>
+    <string name="prodQty">1</string>
 </resources>
