@@ -28,6 +28,9 @@
         <activity android:name=".RegistrationActivity">
 
         </activity>
+        <activity android:name=".CartActivity">
+
+        </activity>
     </application>
 
 </manifest>

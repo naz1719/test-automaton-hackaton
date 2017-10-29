@@ -18,4 +18,6 @@
     <string name="action_secret">Secret code from email</string>
     <string name="error_secret_short">This secret code is too short</string>
     <string name="error_incorrect_secret_code">Incorrect secret code</string>
+
+    <string name="show_more_basket">Show more</string>
 </resources>
