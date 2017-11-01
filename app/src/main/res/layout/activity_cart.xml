@@ -62,8 +62,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -76,8 +76,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/cartMinus"
@@ -93,6 +93,7 @@
                     android:layout_marginRight="10dp"
                     android:text="@string/prodQty"
                     android:textSize="24sp" />
+
                 <ImageView
                     android:id="@+id/cartPlus"
                     android:layout_width="wrap_content"
@@ -109,12 +110,30 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/cartAdd"
                 android:textStyle="bold"
-                android:theme="@style/LognBtn"/>
+                android:theme="@style/LognBtn" />
+
+            <TextView
+                android:id="@+id/contactUs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoLink="all"
+                android:clickable="true"
+                android:fontFamily="sans-serif-smallcaps"
+                android:linksClickable="true"
+                android:text="Contact us"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#3F51B5"
+                android:layout_margin="15dp"
+
+                android:textColorHighlight="#FF4081"
+                android:textColorLink="#FF4081"
+                android:textStyle="italic" />
 
             <WebView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/map_view"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:id="@+id/map_view"
                 tools:ignore="WebViewLayout" />
         </LinearLayout>
     </ScrollView>

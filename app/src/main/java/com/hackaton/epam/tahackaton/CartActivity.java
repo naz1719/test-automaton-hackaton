@@ -64,6 +64,15 @@ public class CartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        TextView contactUs = findViewById(R.id.contactUs);
+        contactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, ContactUsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
