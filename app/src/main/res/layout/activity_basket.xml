@@ -28,6 +28,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/bsk_img_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -52,6 +53,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/bsk_img_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -75,6 +77,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/bsk_img_third"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -98,6 +101,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/bsk_img_fourth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -107,16 +111,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mini version of classic Kånken in repellent fabric." />
-
-            <Button
-                android:id="@+id/basketBtn"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/show_more_basket"
-                android:textStyle="bold"
-                android:theme="@style/LognBtn"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

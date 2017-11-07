@@ -25,6 +25,10 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         initWebViewForNestedIFrame();
+        Intent cart = getIntent();
+        String image = cart.getStringExtra("image");
+        setProductImage(image);
+        final TextView errorView = findViewById(R.id.error_count);
 
         ImageView cartMinus = findViewById(R.id.cartMinus);
         cartMinus.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +40,11 @@ public class CartActivity extends AppCompatActivity {
                 if (qty > 1) {
                     qty--;
                     qtyText.setText(qty.toString());
+                    errorView.setError(null);
+                    errorView.setText("");
                 } else {
+                    errorView.setError("Yeah! Like you can have less!");
+                    errorView.setText("Yeah! Like you can have less!");
                 }
             }
         });
@@ -50,8 +58,12 @@ public class CartActivity extends AppCompatActivity {
 
                 if (qty < 10) {
                     qty++;
+                    errorView.setError(null);
+                    errorView.setText("");
                     qtyText.setText(qty.toString());
                 } else {
+                    errorView.setError("10 products remaining");
+                    errorView.setText("10 products remaining!");
                 }
             }
         });
@@ -89,7 +101,28 @@ public class CartActivity extends AppCompatActivity {
             fin.read(buffer);
             webView.loadData(new String(buffer), "text/html", "UTF-8");
         } catch (IOException e) {
-            System.out.println("Error occured while reading *.html file: "+e);
+            System.out.println("Error occured while reading *.html file: " + e);
+        }
+    }
+
+    private void setProductImage(String image) {
+        ImageView prod = findViewById(R.id.cart_product);
+        int[] images = {R.drawable.basket_activity_first_product, R.drawable.basket_activity_second_product, R.drawable.basket_activity_third_product, R.drawable.basket_activity_fourth_product};
+        switch (image) {
+            case "first":
+                prod.setImageResource(images[0]);
+                break;
+            case "second":
+                prod.setImageResource(images[1]);
+                break;
+            case "third":
+                prod.setImageResource(images[2]);
+                break;
+            case "fourth":
+                prod.setImageResource(images[3]);
+                break;
+            default:
+                prod.setImageResource(images[0]);
         }
     }
 }

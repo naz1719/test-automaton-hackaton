@@ -55,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
+                android:gravity="start"
                 android:text="Kånken backpack in little format with a carrying system suitable for small children’s backs. Chest strap with reflector and removable sitting pad."
                 android:textAlignment="textStart"
                 android:textSize="16sp" />
@@ -71,7 +72,22 @@
                     android:text="Qty (10 products left)"
                     android:textSize="18sp"
                     android:textStyle="bold|italic" />
+                <TextView
+                    android:id="@+id/error_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textColor="@color/red"
+                    android:textSize="12sp"
+                    android:textStyle="bold|italic" />
+
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/cart_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -116,6 +132,7 @@
                 android:id="@+id/contactUs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="15dp"
                 android:autoLink="all"
                 android:clickable="true"
                 android:fontFamily="sans-serif-smallcaps"
@@ -124,7 +141,6 @@
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#3F51B5"
-                android:layout_margin="15dp"
 
                 android:textColorHighlight="#FF4081"
                 android:textColorLink="#FF4081"
