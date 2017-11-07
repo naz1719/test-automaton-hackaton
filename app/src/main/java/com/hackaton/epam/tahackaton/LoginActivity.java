@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     static {
         DUMMY_CREDENTIALS.add("hackaton.epam.ta@gmail.com:21wqsaxz");
     }
+
     public static String winNumber = "";
 
     /**
@@ -193,30 +194,28 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 @Override
                 public void run() {
                     boolean exists = mAuthTask.doInBackground();
-                    if(exists) {
+                    if (exists) {
                         Intent intent = new Intent(LoginActivity.this, BasketActivity.class);
-                        String[] pieces = email.split("@");
-                        intent.putExtra("username",pieces[0]);
+                        intent.putExtra("username", email);
                         startActivity(intent);
                         finish();
-                    }else {
+                    } else {
                         //send email and add new user
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
                                 try {
-                                    DUMMY_CREDENTIALS.add(email+":"+password);
+                                    DUMMY_CREDENTIALS.add(email + ":" + password);
                                     String[] pieces = DUMMY_CREDENTIALS.get(0).split(":");
                                     winNumber = Integer.toString(new Random().nextInt() * 10);
-                                    new SendMessage().sendFromGmail(pieces[0], pieces[1], new String[]{email}, "Hackaton", "Take care of this number: "+winNumber);
+                                    new SendMessage().sendFromGmail(pieces[0], pieces[1], new String[]{email}, "Hackaton", "Take care of this number: " + winNumber);
                                 } catch (Throwable e) {
-                                    System.out.println("Didn't send any email."+ e);
+                                    System.out.println("Didn't send any email." + e);
                                 }
                             }
                         }).start();
                         Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-                        String[] pieces = email.split("@");
-                        intent.putExtra("username",pieces[0]);
+                        intent.putExtra("username", email);
                         startActivity(intent);
                         finish();
                     }
@@ -354,7 +353,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword) ;
+                    return pieces[1].equals(mPassword);
                 }
             }
 

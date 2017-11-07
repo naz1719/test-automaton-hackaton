@@ -119,12 +119,12 @@
 
 
             <Button
-                android:id="@+id/basketBtn"
+                android:id="@+id/payNow"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/cartAdd"
+                android:text="@string/payNow"
                 android:textStyle="bold"
                 android:theme="@style/LognBtn" />
 

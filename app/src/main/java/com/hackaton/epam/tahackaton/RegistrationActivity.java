@@ -13,11 +13,13 @@ import android.widget.TextView;
 public class RegistrationActivity extends AppCompatActivity {
 
     private AutoCompleteTextView secretCodeView;
+    private String email;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
+        email = intent.getStringExtra("username");
         setContentView(R.layout.activity_registration);
         TextView userName = findViewById(R.id.usernamereg);
         userName.setText("Hello, " + intent.getStringExtra("username") + ". Please, find your secret code inside your email box to complete registration.");
@@ -48,6 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
             focusView.requestFocus();
         } else if (LoginActivity.winNumber.equals(secretCode)) {
             Intent intent = new Intent(RegistrationActivity.this, BasketActivity.class);
+            intent.putExtra("username", email);
             startActivity(intent);
             finish();
         } else {

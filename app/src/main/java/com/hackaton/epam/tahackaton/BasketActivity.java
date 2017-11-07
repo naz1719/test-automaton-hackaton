@@ -7,15 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class BasketActivity extends AppCompatActivity {
+
+    private String email;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket);
+        Intent basket = getIntent();
+        email = basket.getStringExtra("username");
 
         final Animation translate = AnimationUtils.loadAnimation(this, R.anim.anim_translate);
 
@@ -62,6 +65,7 @@ public class BasketActivity extends AppCompatActivity {
     private void createBasketActivity(String image) {
         Intent cart = new Intent(BasketActivity.this, CartActivity.class);
         cart.putExtra("image", image);
+        cart.putExtra("username", email);
         startActivity(cart);
     }
 }

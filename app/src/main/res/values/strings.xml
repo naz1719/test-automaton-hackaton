@@ -23,6 +23,6 @@
 
     <string name="youtube_prod_dev">Product development</string>
     <string name="error_player">There was an error initializing the YoutubePlayer (%1$s)</string>
-    <string name="cartAdd">Add to cart</string>
+    <string name="payNow">Pay now</string>
     <string name="prodQty">1</string>
 </resources>
