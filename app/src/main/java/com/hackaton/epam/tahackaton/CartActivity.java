@@ -108,12 +108,16 @@ public class CartActivity extends AppCompatActivity {
                         }
                     }
                 }).start();
-                Context context = getApplicationContext();
+                final Context context = getApplicationContext();
                 CharSequence text = "Congratulations! Check email for more information";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+
+                Intent intent = new Intent(CartActivity.this, BasketActivity.class);
+                intent.putExtra("username", email);
+                startActivity(intent);
             }
         });
     }
